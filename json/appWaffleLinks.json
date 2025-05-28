@@ -1,0 +1,16 @@
+{
+    "len" : 11,
+    "apps_dict" : {
+        "0": ["https://www.google.com/maps?authuser=0", "maps.png", "maps"],
+        "1": ["https://meet.google.com/landing", "meets.png", "meets"],
+        "2": ["https://www.youtube.com/","youtube.png", "youtube"],
+        "3": ["https://docs.google.com/document/u/0/","docs.png", "docs"],
+        "4": ["https://drive.google.com/drive/u/0/home","drive.png", "drive"],
+        "5": ["https://chatgpt.com/","chatGPT.png", "chatGPT"],
+        "6": ["https://docs.google.com/presentation/u/0/","slides.png", "slides"],
+        "7": ["https://www.google.com/finance/?authuser=0","finance.png", "finance"],
+        "8": ["https://trello.com/u/ericlin322/boards","trello.png", "trello"],
+        "9": ["https://docs.google.com/forms/u/0/","forms.png", "forms"],
+        "10": ["https://docs.google.com/spreadsheets/u/0/","sheets.png", "sheets"]
+    }
+}

@@ -1,0 +1,289 @@
+@font-face {
+    font-family: cards;
+    src: url(/fonts/CardCharactersNarrowFigures.ttf);
+}
+
+#cardsContainer {
+    position:absolute;
+    top: 18%;
+    left: 50%;
+    translate: -50% 0;
+    
+    width: 20em;
+    height: 28em;
+}
+
+.cards{
+    position: absolute;
+    transform-origin: center 58rem;
+    
+    width: inherit;
+    height: inherit;
+    border-radius: 2rem;
+
+    background-color: #fff;
+    --color: white;
+    font-size: 10em;
+    line-height: 5rem;
+    border: 0.2rem solid rgb(190, 190, 190);
+    box-shadow: 0 0.3rem 0.5rem 0 rgba(0, 0, 0, 0.2), 0 0.4rem 1.25rem 0 rgba(0, 0, 0, 0.19);
+    transition-duration: 0.2s;
+}
+
+.cards:hover {
+    transform: translate(0, -6%);
+}
+
+@keyframes fan {
+    0% {
+        rotate: 0deg;
+        translate: 0 0;
+    }
+    15% {
+        translate: 0 5%;
+    }
+    85% {
+        translate: 0 -25%;
+    }
+    100% {
+        rotate: var(--r);
+        translate: 0 -24%;
+    }
+}
+@keyframes cardsIdle {
+    0% {
+        rotate: var(--r);
+    }
+    100% {
+        rotate: calc(var(--r)*0.99);
+    }
+}
+
+
+.cardsAnimation {
+    animation: fan 0.9s ease-in-out 0.1s forwards normal,
+    cardsIdle 1.4s ease-in-out 1s infinite alternate;
+}
+
+.cardsC {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: inherit;
+    height: inherit;
+}
+
+.cardsC h1 {
+    margin: 0;
+    color: var(--color); 
+    font-size: 100%;
+    font-family: cards;
+    line-height: 1em;
+    padding-bottom: 0.1em;
+}
+
+.cardTL {
+    position: absolute; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    left: 2.5%; 
+    top: 3.5%;
+    
+    width: 25%;
+    height: 50%;
+}
+
+.cardTL p {
+    color: var(--color); 
+    font-size: 50%;
+    font-family: cards;
+    margin: 0;
+}
+
+.cardBR {
+    position: absolute; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    right: 2.5%; 
+    bottom: 3.5%; 
+
+    width: 25%;
+    height: 50%;
+
+    rotate: 180deg;
+}
+
+.cardBR p {
+    color: var(--color); 
+    font-size: 50%;
+    font-family: cards;
+    margin: 0;
+}
+
+.slotMachine {
+    display: flex;
+    position: absolute;
+    justify-content: space-evenly;
+    align-items: center;
+
+    top: 26em;
+    left: 50%;
+    translate: -50% 0;
+
+    width: 50em;
+    height: 25em;
+
+    box-shadow: inset 1px 1px 0.9em rgba(255, 255, 255, 0.9);
+    border-radius: 4em;
+    border-style: solid;
+    border-width: 0.2em;
+    border-color: rgba(170, 154, 62, 0.75);
+    background-image: linear-gradient(rgb(221, 181, 0),rgb(255, 227, 149), rgb(182, 139, 0));
+}
+
+@keyframes slotMachineAnimation {
+    0%{
+        translate: -50% 0;
+    }  
+    2%{
+        translate: -50% 2em;
+        height: 23em;
+    }   
+    14%{
+        translate: -50% 5em;
+        height: 21em;
+    }  
+    80%{
+        translate: -50% -12em;
+        height: 28em;
+    }
+    95%{
+        translate: -50% 2em;
+        height: 24em;
+    }
+    100%{
+        translate: -50% 1em;
+        height: 25em;
+    }
+}
+
+.slotMachineAnimation {
+    animation: slotMachineAnimation 0.6s ease-in-out 0.1s none normal;
+}
+
+.reel {
+    width: 28%;
+    height: 82%;
+
+    --iconHeight: ;
+    --reelDisplacement: ;
+    --animationDelay: ;
+    --animationTime: ;
+    --initalReelPosition: ;
+    --reelOffset: 3em;
+
+    box-shadow: inset 0 1px 0.7em black;
+    overflow: hidden;
+    border-radius: 2em;
+    border-style: solid;
+    border-width: 0.2em;
+    border-color: rgba(170, 154, 62, 1);
+    background-image: url(/images/assets/reel.png);
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    background-position: 0 calc(var(--reelOffset) + var(--initalReelPosition)*var(--iconHeight));
+}
+
+@keyframes reelAnimation {
+    0%{
+        background-position: 0 calc(var(--reelOffset) + var(--initalReelPosition)*var(--iconHeight));
+    }
+    95%{
+        background-position: 0 calc(var(--initalReelPosition)*0.5em + 9em + var(--reelDisplacement)*var(--iconHeight))
+    }
+    100%{
+        background-position: 0 calc(var(--reelOffset) + var(--reelDisplacement)*var(--iconHeight));
+    }
+}
+
+.reelAnimation {
+    animation: reelAnimation var(--animationTime) ease-in-out var(--animationDelay) forwards normal;
+}
+
+.staticBgContainer {
+    position: absolute;
+
+    left: 50%;
+    translate: -50% 0;
+    top: 26em;
+}
+
+.chipStacks{
+    position: absolute; 
+    width: 0em; 
+    transform-origin: center 200em; 
+    translate: -50% 0;
+    --r: 0;
+}
+
+@keyframes chipStacksAnimation {
+    0%{
+        width: 10em;
+        rotate: 0deg;
+        translate: -50% 0;
+    }
+    100%{
+        width: 30em;
+        rotate: var(--r);
+        translate: -50% -5em;
+    }
+}
+@keyframes chipStacksIdle {
+    0% {
+        rotate: var(--r);
+    }
+    100% {
+        rotate: calc(var(--r)*0.995);
+    }
+}
+
+.chipStacksAnimation {
+    animation: chipStacksAnimation 0.6s ease-in-out 0.5s forwards normal,
+    chipStacksIdle 1.4s ease-in-out 1.1s infinite alternate;
+}
+
+.dice {
+    position: absolute; 
+    width: 20em; 
+    top: 50em; 
+}
+
+@keyframes diceAnimation {
+    70% {
+        translate: 0 -50em;
+    }
+    100% {
+        translate: 0 -40em;
+    }
+}
+@keyframes diceIdle {
+    0% {
+        translate: 0 -40em;
+    }
+    100%{
+        translate: 0 -43em;
+    }
+}
+
+.diceAnimation {
+    animation: diceAnimation 0.6s ease-in-out var(--animationDelay) forwards normal,
+    diceIdle 1.4s ease-in-out calc(0.6s + var(--animationDelay)) infinite alternate
+    ;
+}

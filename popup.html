@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style_sheets/popup.css">
+  </head>
+  <body>
+    <div id="masterContainer">
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <p style="font-size: 1.8rem;"><b style="color: white; margin: auto;">Slot Machine Tabs</b></p>
+      </div>
+
+      <p style="padding-left: 1%;" id="scaleDisplay">Scale:</p>
+      <div class="slidecontainer">
+        <input type="range" min="0" max="2" value="1" step="0.05" class="slider" id="scaling">
+      </div>
+
+      <p style="padding-left: 1%;" id="scaleDisplay">Open weather api key:</p>
+      <input type="text" id="weatherApiInput">
+    </div>
+  </body>
+
+  <script src="/js/popup.js"></script>
+
+</html>

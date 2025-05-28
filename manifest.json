@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "Slot Machine Tabs",
+    "description": "animated slot machine chrome background",
+    "author": "Threadd_",
+    "version": "1.0",
+    "chrome_url_overrides" : {
+      "newtab": "index.html"
+    },
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "permissions": ["storage"],
+    "icons": {
+      "16": "images/icons/icon-16.png",
+      "32": "images/icons/icon-32.png",
+      "48": "images/icons/icon-48.png",
+      "128": "images/icons/icon-128.png"
+      }
+  }
