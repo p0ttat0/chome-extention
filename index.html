@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html style="font-size: 16px;">
-    <script src="js/scaling.js"></script>
     <head>
         <title>New Tab</title>
         <link rel="icon" type="image/x-icon" href="/images/icon-16.png">
@@ -10,9 +9,7 @@
     </head>
     
     <body style="background-color: black; overflow: hidden">
-        <div id="cardsContainer">
-            <script src="js/cards.js"></script>
-        </div>
+        <div id="cardsContainer"></div>
 
         <div class="staticBgContainer">
             <img src="images/assets/chips.png" alt="" class="chipStacks">
@@ -39,17 +36,16 @@
         </div>
         
         <div id="shortcutsContainer">
-            <a href="http://gmail.com"><b>gmail</b></a>
-            <a href="https://images.google.ca/"><b>images</b></a>
+            <a href="http://gmail.com"><b>Gmail</b></a>
+            <a href="https://images.google.ca/"><b>Images</b></a>
             <input id="appWaffle" type="image" src="/images/icons/app_waffle.png"/>
             <a style="padding: 0.75rem;" id="button2"><img src="/images/icons/icon-128.png" alt="( )" style="width: 1.5rem;" id="button1"></a>
         </div>
         
         <div id="weather"></div>
 
-        <div id="appWaffle_links_container" class="hide"> 
-            <script src="js/appwaffle.js"></script> 
-        </div>
+        <div id="appWaffle_links_container" class="hide"> </div>
 
         <script src="js/init.js" type="module"></script>
+        <script src="js/background.js" type="module"></script>
     </body>

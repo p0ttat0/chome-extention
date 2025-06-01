@@ -1,18 +1,21 @@
-function spinReels(){
+export {spinReels}
+
+function spinReels(firstSpin){
+    localStorage.setItem("slotsLock", true)
     const reels = document.getElementsByClassName('reel');
     const style = getComputedStyle(reels[0]);
     let result = [] // array of reel displacements
-    let target = Math.round(Math.random()*8)  // target so more common wins
+    let target = Math.round(Math.random()*8)  //winning image
     let winRate = 1/12     
     let randomVariation =  Math.cbrt(winRate)**-1   // variation arround the target
 
     for (let i = 0; i < 3; i++) {
         let initalReelPosition;
         let animationDelay;
-        if (!parseFloat(getComputedStyle(reels[i]).getPropertyValue('--reelDisplacement'))){ // first spin where reelDisplacement is 0
-            reels[i].style.setProperty('--iconHeight', `${parseFloat(style.getPropertyValue('width'))}px`);
-            initalReelPosition = Math.round(Math.random()*8); 
-            animationDelay = i*0.2 + 0.65;
+        if (firstSpin){
+            reels[i].style.setProperty('--iconHeight', `${parseFloat(style.getPropertyValue('width'))}px`);     // sets up icon height of the reel for use in animation keyframes
+            initalReelPosition = Math.round(Math.random()*8);
+            animationDelay = i*0.2 + 0.65;      // delay for aniamtion to finish 
         } else {
             initalReelPosition = parseInt(getComputedStyle(reels[i]).getPropertyValue('--reelDisplacement')) % 9; 
             animationDelay = i*0.2;
@@ -33,11 +36,8 @@ function spinReels(){
         reels[i].classList.add('reelAnimation');
     }
 
-    console.log(result)
     const allEqual = arr => arr.every( v => v === arr[0] )
     if (allEqual(result)) {
         console.log('win')
     }
 }
-
-export {spinReels}
