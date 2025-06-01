@@ -10,18 +10,22 @@
 
       <p style="padding-left: 1%;" id="scaleDisplay">Scale:</p>
       <div class="slidecontainer">
-        <input type="range" min="0" max="2" value="1" step="0.05" class="slider" id="scaling">
+        <input type="range" min="0" max="2" value="1" step="0.05" class="slide" id="scaling">
       </div>
 
       <p style="padding-left: 1%;" id="scaleDisplay">Open Weather Api Key:</p>
       <input type="text" id="weatherApiInput">
       <p style="padding-left: 1%;" id = speedSliderDisplay>Slot Machine Spin Speed:</p>
       <div class="slidecontainer">
-        <input type="range" min="0" max="5" value="1" step="0.25" class="slider" id="spinSpeed">
+        <input type="range" min="0" max="5" value="1" step="0.25" class="slide" id="spinSpeed">
       </div>
+      <p style="padding-left: 1%;">Extention Toggle</p>
+      <label class="switch">
+        <input type="checkbox" id="extentionToggle">
+        <span class="slider round"></span>
+      </label>
     </div>
   </body>
-
   <script src="/js/popup.js"></script>
 
 </html>
