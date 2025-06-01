@@ -8,13 +8,13 @@ function spinReels(firstSpin){
     const speedMulti = localStorage.getItem("speed");
     const baseCycles = 5;
     const reelStartDelay = 0.2;
-    const baseAnimationTime = 4;
+    const baseAnimationTime = 3;
     const reelEndDelay = 1;
     const reels = document.getElementsByClassName('reel');
     const style = getComputedStyle(reels[0]);
     const winRate = 1/10
     const randomVariation =  Math.cbrt(winRate)**-1   // variation arround the target
-    const totalAnimationTime = (firstSpin) ? (2*reelStartDelay+(baseAnimationTime + 2*reelEndDelay - reelStartDelay))/speedMulti+0.65: (2*reelStartDelay+(baseAnimationTime + 2*reelEndDelay - reelStartDelay))/speedMulti;
+    const totalAnimationTime = (firstSpin) ? (2*reelStartDelay+(baseAnimationTime + 2*reelEndDelay))/speedMulti+0.65: (2*reelStartDelay+(baseAnimationTime + 2*reelEndDelay))/speedMulti;
     let result = [] // array of reel displacements
     let target = Math.round(Math.random()*8)  //winning image     
     
