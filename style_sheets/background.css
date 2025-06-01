@@ -5,17 +5,17 @@
 
 #cardsContainer {
     position:absolute;
-    top: 18%;
+    top: 38%;
     left: 50%;
-    translate: -50% 0;
+    translate: -50% -50%;
     
-    width: 20em;
-    height: 28em;
+    width: 20rem;
+    height: 28rem;
 }
 
 .cards{
     position: absolute;
-    transform-origin: center 58rem;
+    transform-origin: center 56rem;
     
     width: inherit;
     height: inherit;
@@ -103,6 +103,7 @@
     font-size: 50%;
     font-family: cards;
     margin: 0;
+    line-height: normal;
 }
 
 .cardBR {
@@ -125,20 +126,22 @@
     font-size: 50%;
     font-family: cards;
     margin: 0;
+    line-height: normal;
 }
 
-.slotMachine {
+#slotMachine {
     display: flex;
     position: absolute;
     justify-content: space-evenly;
     align-items: center;
 
-    top: 26em;
+    top: 20rem;
     left: 50%;
-    translate: -50% 0;
+    translate: -50% -50%;
+    margin-top: 30vh;
 
-    width: 50em;
-    height: 25em;
+    width: 50rem;
+    height: 25rem;
 
     box-shadow: inset 1px 1px 0.9em rgba(255, 255, 255, 0.9);
     border-radius: 4em;
@@ -150,32 +153,36 @@
 
 @keyframes slotMachineAnimation {
     0%{
-        translate: -50% 0;
+        height: 25rem;
+        width: 50rem;
     }  
-    2%{
-        translate: -50% 2em;
-        height: 23em;
-    }   
-    14%{
-        translate: -50% 5em;
+    15%{
         height: 21em;
+        width: 54rem;
+        top: 22rem;
     }  
-    80%{
-        translate: -50% -12em;
-        height: 28em;
+    75%{
+        height: 30em;
+        width: 48rem;
+        top: 2rem;
+    }
+    85%{
+        width: 48rem;
     }
     95%{
-        translate: -50% 2em;
-        height: 24em;
+        height: 21em;
+        width: 58rem;
+        top: 22rem;
     }
     100%{
-        translate: -50% 1em;
         height: 25em;
+        width: 50rem;
+        top: 20rem;
     }
 }
 
 .slotMachineInitAnimation {
-    animation: slotMachineAnimation 0.6s ease-in-out 0.1s none normal;
+    animation: slotMachineAnimation 1s ease-in-out 0.1s none normal;
 }
 
 .reel {
@@ -198,7 +205,7 @@
     background-image: url(/images/assets/reel.png);
     background-repeat: repeat-y;
     background-size: 100% auto;
-    background-position: 0 calc(var(--reelOffset) + var(--initalReelPosition)*var(--iconHeight));
+    background-position: 0 calc((var(--reelOffset) + var(--initalReelPosition)*var(--iconHeight)));
 }
 
 @keyframes reelAnimation {
@@ -206,10 +213,10 @@
         background-position: 0 calc(var(--reelOffset) + var(--initalReelPosition)*var(--iconHeight));
     }
     95%{
-        background-position: 0 calc(var(--initalReelPosition)*0.5em + 9em + var(--reelDisplacement)*var(--iconHeight))
+        background-position: 0 calc(var(--reelOffset)*4  + var(--reelDisplacement)*var(--iconHeight))
     }
     100%{
-        background-position: 0 calc(var(--reelOffset) + var(--reelDisplacement)*var(--iconHeight));
+        background-position: 0 calc(var(--reelOffset) + var(--reelDisplacement)*var(--iconHeight))
     }
 }
 
@@ -222,14 +229,14 @@
 
     left: 50%;
     translate: -50% 0;
-    top: 26em;
 }
 
 .chipStacks{
     position: absolute; 
-    width: 0em; 
-    transform-origin: center 200em; 
+    width: 0; 
+    transform-origin: center 200rem; 
     translate: -50% 0;
+    margin-top: 35vh;
     --r: 0;
 }
 
@@ -255,35 +262,39 @@
 }
 
 .chipStacksAnimation {
-    animation: chipStacksAnimation 0.6s ease-in-out 0.5s forwards normal,
-    chipStacksIdle 1.4s ease-in-out 1.1s infinite alternate;
+    animation: chipStacksAnimation 0.6s ease-in-out 0.9s forwards normal,
+    chipStacksIdle 1.4s ease-in-out 1.5s infinite alternate;
 }
 
 .dice {
     position: absolute; 
-    width: 20em; 
-    top: 50em; 
+    width: 20rem; 
+    top: 100vh;
+    margin-top: 35vh;
 }
 
 @keyframes diceAnimation {
+    0% {
+        top: 100vh;
+    }
     70% {
-        translate: 0 -50em;
+        top: -5vh;
     }
     100% {
-        translate: 0 -40em;
+        top: 15em;
     }
 }
+
 @keyframes diceIdle {
     0% {
-        translate: 0 -40em;
+        top: 15em;
     }
     100%{
-        translate: 0 -43em;
+        top: 12em;
     }
 }
 
 .diceAnimation {
     animation: diceAnimation 0.6s ease-in-out var(--animationDelay) forwards normal,
-    diceIdle 1.4s ease-in-out calc(0.6s + var(--animationDelay)) infinite alternate
-    ;
+    diceIdle 1.4s ease-in-out calc(0.6s + var(--animationDelay)) infinite alternate;
 }
